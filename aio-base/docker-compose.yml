@@ -19,7 +19,6 @@ services:
       - ./volumes/var/log/tomcat:/var/log/tomcat
 
 # Network name
-#
 # This container app must use a network conencted to the webproxy "evertramos"
 # https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion
 
