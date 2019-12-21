@@ -9,7 +9,7 @@ $ docker build -t axelor/aio-erp .
 ```
 
 ## Start AXELOR WITH SLL
-Go to the folder aio-erp after build all and write 
+After build all, Go to the folder aio-erp and write 
 * `sudo docker-compose up`
 
 Or
