@@ -30,6 +30,7 @@ $ docker build -t axelor/aio-erp .
 ## Run app container AXELOR with SLL
 
 After build all, Go to the folder aio-erp and edit .env
+
 Modify with your domain or subdomain and register email Let's Encrypt
 ```
 DOMAIN_AXELOR=write_your_domain_of_AXELOR
