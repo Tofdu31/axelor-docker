@@ -55,4 +55,5 @@ Once app completes database initialization, it can be access at: https://yourdom
 ## VERY IMPORTANT
 
 This version of container app must use a network connected to the webproxy of the projet "evertramos"
-Please, See the linhk : https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion
+
+Please, See the link : https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion
