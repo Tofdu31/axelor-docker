@@ -14,7 +14,7 @@ After build all, Go to the folder aio-erp and write
 
 Or
 
-```sudo docker-compose up -d````
+* `sudo docker-compose up -d* `
 
 ## Run app container
 
