@@ -23,7 +23,9 @@ $ docker build -t axelor/aio-builder .
 ### Build app image
 
 First : modify the application.properties with your instructions
+
 AFTER :
+
 ```sh
 $ cd aio-erp
 $ docker build -t axelor/aio-erp .
