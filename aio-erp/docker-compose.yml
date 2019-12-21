@@ -17,7 +17,6 @@ services:
       - ./volumes/var/log/postgresql:/var/log/postgresql
       - ./volumes/var/lib/tomcat:/var/lib/tomcat
       - ./volumes/var/log/tomcat:/var/log/tomcat
-      - ./application.properties:/application.properties
 
 # Network name
 # This container app must use a network conencted to the webproxy "evertramos"
