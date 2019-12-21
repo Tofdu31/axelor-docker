@@ -1,68 +1,64 @@
 # All-in-One : Axelor ERP
 
-The Dockerfile to build All-in-One docker image of Axelor ERP.
 
-## Build Image
+# Axelor Dockerfiles
+
+This repository provides [Dockerfiles](https://docs.docker.com/engine/reference/builder/) and samples to build [Docker](https://www.docker.com/what-docker) images for [Axelor](https://axelor.com) apps.
+
+## Build Images
+
+It assumes you have Docker installed on your system.
+
+### Build base image
 
 ```sh
+$ cd aio-base
+$ docker build -t axelor/aio-base .
+```
+
+### Build builder image
+
+```sh
+$ cd aio-builder
+$ docker build -t axelor/aio-builder .
+```
+
+### Build app image
+
+```sh
+$ cd aio-erp
 $ docker build -t axelor/aio-erp .
 ```
 
-## Start AXELOR WITH SLL
-After build all, Go to the folder aio-erp and write 
+## Run app container AXELOR with SLL
+
+After build all, Go to the folder aio-erp
+
+First : modify the application.properties with your instructions
+
+Second : edit .env
+```
+nano .env
+```
+And modify with your domain or subdomain and register email Let's Encrypt
+```
+DOMAIN_AXELOR=write_your_domain_of_AXELOR
+LETSENCRYPT_EMAIL=write_your_email_for_LETSENCRYPT
+```
+And after :
+
 * `sudo docker-compose up`
 
 Or
 
-* `sudo docker-compose up -d* `
+* `sudo docker-compose up -d`
 
-## Run app container
+Once app completes database initialization, it can be access at: https://yourdomain.com or your subdomain https://subdomain.yourdomain.com
 
-```sh
-$ docker run -it -p 8080:80 axelor/aio-erp
-```
+## VERY IMPORTANT
 
-## Run with SSL
+This version of container app must use a network connected to the webproxy of the projet "evertramos"
 
-```sh
-$ docker run -it -v /path/to/your/certs:/etc/nginx/certs -p 80:80 -p 443:443 axelor/aio-erp
-```
+Please, See the link : https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion
 
-The `certs` directory should contain certificates with following names:
 
-* `nginx.key` - the key file
-* `nginx.crt` - the certificate file
-* `dhparam.pem` - the dhparam file
-
-## Custom app config
-
-The image uses default `application.properties` from ABS source. You can provide your own
-configuration file as bellow:
-
-```sh
-$ docker run -it -v /path/to/application.properties:/application.properties -p 8080:80 axelor/aio-erp
-```
-
-## Other Options
-
-The docker image exposes following ports:
-
-* `80` - nginx http port
-* `443` - nginx https port
-* `8080` - tomcat http port
-* `5432` - postgresql port
-
-The docker image exposes following volumes:
-
-* `/var/lib/tomcat` - tomcat base directory
-* `/var/lib/postgresql` - postgresql data directory
-* `/var/log/tomcat` - tomcat log files
-* `/var/log/postgresql` - postgresql log files
-
-Following environment variables can be used to change container settings:
-
-* `NGINX_HOST` - the public host name (default: localhost)
-* `NGINX_PORT` - the public port (default: 443)
-* `POSTGRES_USER` - the postgresql user name (default: axelor)
-* `POSTGRES_PASSWORD` - the postgresql user password (default: axelor)
-* `POSTGRES_DB` - the postgresql database name (default: axelor)
