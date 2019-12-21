@@ -34,7 +34,7 @@ After build all, Go to the folder aio-erp and write
 
 Or
 
-* `sudo docker-compose up -d* `
+* `sudo docker-compose up -d`
 
 Once app completes database initialization, it can be access at: https://yourdomain.com or your subdomain https://subdomain.yourdomain.com
 
