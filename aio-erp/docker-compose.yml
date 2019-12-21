@@ -9,7 +9,7 @@ services:
 #      - NGINX_HOST=localhost
 #      - NGINX_PORT=443
       - VIRTUAL_HOST= ${DOMAIN_AXELOR}
-      - LETSENCRYPT_HOST= ${DOMAIN_AXELOR}
+      - LETSENCRYPT_HOST= ${LETSENCRYPT_HOST}
       - LETSENCRYPT_EMAIL= ${LETSENCRYPT_EMAIL}      
     volumes:
 #     - ./certs:/etc/nginx/certs:ro
