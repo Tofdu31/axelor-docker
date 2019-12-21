@@ -16,8 +16,8 @@ ENV CATALINA_BASE /var/lib/tomcat
 
 RUN set -ex \
 	&& export TOMCAT_MAJOR="8" \
-	&& export TOMCAT_VERSION="8.5.50" \
-	&& export TOMCAT_ESUM="ffca86027d298ba107c7d01c779318c05b61ba48767cc5967ee6ce5a88271bb6ec8eed60708d45453f30eeedddcaedd1a369d6df1b49eea2cd14fa40832cfb90" \
+	&& export TOMCAT_VERSION="8.5.38" \
+	&& export TOMCAT_ESUM="3a3e624014faf87091e6dbb8bad13c68240955d62301d22cf3d75a1766859dd97500d6850fbd5d3dc012f08f9301eb24c24fa7175bcca616767fa5c18875072d" \
 	&& export TOMCAT_PKG="apache-tomcat-$TOMCAT_VERSION.tar.gz" \
 	&& mkdir -p $CATALINA_HOME \
 	&& mkdir -p $CATALINA_BASE \
@@ -76,6 +76,8 @@ RUN set -ex \
 	&& DEBIAN_FRONTEND=noninteractive apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get upgrade -y \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y gnupg dirmngr apt-transport-https locales \
+	&& apt-key adv --batch --fetch-keys http://nginx.org/keys/nginx_signing.key \
+	&& echo "deb http://nginx.org/packages/mainline/ubuntu/ bionic nginx" >> /etc/apt/sources.list \
 	&& apt-key adv --batch --fetch-keys https://www.postgresql.org/media/keys/ACCC4CF8.asc \
 	&& echo 'deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main' > /etc/apt/sources.list.d/pgdg.list \
 	&& apt-key adv --batch --fetch-keys https://deb.nodesource.com/gpgkey/nodesource.gpg.key \
@@ -86,7 +88,8 @@ RUN set -ex \
 	&& DEBIAN_FRONTEND=noninteractive apt-get upgrade -y \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y \
 		supervisor gosu postgresql-9.6 postgresql-contrib-9.6 \
-		libapr1 gettext-base git-core nodejs yarn \
+		libapr1 nginx nginx-module-xslt nginx-module-geoip nginx-module-image-filter nginx-module-njs gettext-base \
+		git-core nodejs yarn \
 	&& rm -rf /var/lib/apt/lists/*
 
 # update locale
@@ -144,6 +147,13 @@ RUN set -ex \
 	&& rm -rf /var/lib/postgresql/9.6/main \
 	&& mkdir -p /var/lib/postgresql/9.6 \
 	&& chown -R postgres:postgres /var/lib/postgresql
+
+# nginx
+ENV NGINX_HOST localhost
+ENV NGINX_PORT 443
+
+COPY nginx.conf /etc/nginx/conf.d.templates/
+COPY nginx-ssl.conf /etc/nginx/conf.d.templates/
 
 VOLUME ["/var/lib/tomcat", "/var/lib/postgresql", "/var/log/tomcat", "/var/log/postgresql"]
 
