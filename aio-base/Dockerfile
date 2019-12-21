@@ -157,7 +157,7 @@ RUN set -ex \
 
 VOLUME ["/var/lib/tomcat", "/var/lib/postgresql", "/var/log/tomcat", "/var/log/postgresql"]
 
-# EXPOSE 80 443 8080 5432
+EXPOSE 80 443 8080 5432 8043
 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh && mkdir /docker-entrypoint-initdb.d
