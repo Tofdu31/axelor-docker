@@ -22,6 +22,8 @@ $ docker build -t axelor/aio-builder .
 
 ### Build app image
 
+First : modify the application.properties with your instructions
+AFTER :
 ```sh
 $ cd aio-erp
 $ docker build -t axelor/aio-erp .
@@ -31,9 +33,7 @@ $ docker build -t axelor/aio-erp .
 
 After build all, Go to the folder aio-erp
 
-First : modify the application.properties with your instructions
-
-Second : edit .env
+edit .env
 ```
 nano .env
 ```
