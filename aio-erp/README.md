@@ -26,6 +26,12 @@ The `certs` directory should contain certificates with following names:
 * `nginx.crt` - the certificate file
 * `dhparam.pem` - the dhparam file
 
+## Start AXELOR WITH SLL
+Go to the folder aio-erp after build all and write 
+* `sudo docker-compose up`
+Or
+* `sudo docker-compose up -d`
+
 ## Custom app config
 
 The image uses default `application.properties` from ABS source. You can provide your own
