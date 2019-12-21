@@ -20,6 +20,7 @@ RUN \
 FROM axelor/aio-base
 LABEL maintainer="Axelor <support@axelor.com>"
 
+COPY application.properties /var/lib/tomcat7/webapps/ROOT/WEB-INF/classes/application.properties
 COPY --from=builder /app/src/axelor-erp/build/libs/axelor-erp-*.war $CATALINA_BASE/webapps/ROOT.war
 
 CMD ["start"]
