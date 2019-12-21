@@ -27,13 +27,14 @@ $ cd aio-erp
 $ docker build -t axelor/aio-erp .
 ```
 
-## Run app container
+## Run app container AXELOR WITH SLL
 
-Once app image is built, you can run it like this:
+After build all, Go to the folder aio-erp and write 
+* `sudo docker-compose up`
 
-```sh
-$ docker run -it -p 8080:80 axelor/aio-erp
-```
+Or
 
-Once app completes database initialization, it can be access at: http://localhost:8080
+* `sudo docker-compose up -d* `
+
+Once app completes database initialization, it can be access at: https://yourdomain.com
 
