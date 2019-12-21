@@ -29,9 +29,11 @@ $ docker build -t axelor/aio-erp .
 
 ## Run app container AXELOR with SLL
 
+After build all, Go to the folder aio-erp
+
 First : modify the application.properties with your instructions
 
-After build all, Go to the folder aio-erp and edit .env
+Second : edit .env
 ```
 nano .env
 ```
