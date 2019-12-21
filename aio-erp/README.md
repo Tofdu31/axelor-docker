@@ -8,6 +8,14 @@ The Dockerfile to build All-in-One docker image of Axelor ERP.
 $ docker build -t axelor/aio-erp .
 ```
 
+## Start AXELOR WITH SLL
+Go to the folder aio-erp after build all and write 
+* `sudo docker-compose up`
+
+Or
+
+* `sudo docker-compose up -d`
+
 ## Run app container
 
 ```sh
@@ -25,12 +33,6 @@ The `certs` directory should contain certificates with following names:
 * `nginx.key` - the key file
 * `nginx.crt` - the certificate file
 * `dhparam.pem` - the dhparam file
-
-## Start AXELOR WITH SLL
-Go to the folder aio-erp after build all and write 
-* `sudo docker-compose up`
-Or
-* `sudo docker-compose up -d`
 
 ## Custom app config
 
