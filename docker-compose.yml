@@ -1,10 +1,10 @@
 version: '3'
 services:
   axelor:
-    image: axelor/aio-base
+    image: axelor/aio-erp
     build: .
     ports:
-      - 80443:443
+      - 8043:443
     environment:
 #      - NGINX_HOST=localhost
 #      - NGINX_PORT=443
