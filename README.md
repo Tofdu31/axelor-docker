@@ -30,6 +30,8 @@ $ cd aio-erp
 
 And modify the application.properties with your instructions
 
+For information, visit : https://docs.axelor.com/adk/5.2/dev-guide/application/config.html#example-configuration
+
 AFTER :
 
 ```sh
