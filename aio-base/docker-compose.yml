@@ -6,13 +6,10 @@ services:
     ports:
       - 80443:443
     environment:
-#      - NGINX_HOST=localhost
-#      - NGINX_PORT=443
-      - VIRTUAL_HOST= ${DOMAIN_AXELOR}
-      - LETSENCRYPT_HOST= ${DOMAIN_AXELOR}
-      - LETSENCRYPT_EMAIL= ${LETSENCRYPT_EMAIL}      
+      - NGINX_HOST=localhost
+      - NGINX_PORT=443
     volumes:
-#     - ./certs:/etc/nginx/certs:ro
+      - ./certs:/etc/nginx/certs:ro
       - ./volumes/var/lib/postgresql:/var/lib/postgresql
       - ./volumes/var/log/postgresql:/var/log/postgresql
       - ./volumes/var/lib/tomcat:/var/lib/tomcat
