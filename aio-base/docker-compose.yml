@@ -20,7 +20,7 @@ services:
 
 # Network name
 #
-# Your container app must use a network conencted to your webproxy
+# This container app must use a network conencted to your webproxy
 # https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion
 
 networks:
