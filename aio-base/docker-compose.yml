@@ -2,6 +2,7 @@ version: '3'
 services:
   axelor:
     image: axelor/aio-base
+    container_name: ${CONTAINER_BASE_AXELOR}    
     build: .
     ports:
       - NGINX_PORT= ${PORT_AXELOR}:443
