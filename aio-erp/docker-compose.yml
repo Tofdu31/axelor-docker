@@ -12,7 +12,7 @@ services:
       - LETSENCRYPT_HOST= ${LETSENCRYPT_HOST}
       - LETSENCRYPT_EMAIL= ${LETSENCRYPT_EMAIL}      
     volumes:
-#     - ./certs:/etc/nginx/certs:ro
+      - ./${AXELOR_SSL_CERTIFICATE}:/etc/nginx/certs:ro
       - ./volumes/var/lib/postgresql:/var/lib/postgresql
       - ./volumes/var/log/postgresql:/var/log/postgresql
       - ./volumes/var/lib/tomcat:/var/lib/tomcat
