@@ -30,6 +30,10 @@ $ cd aio-erp
 
 And modify the application.properties with your instructions
 
+```sh
+$ nano application.properties
+```
+
 For information, visit : https://docs.axelor.com/adk/5.2/dev-guide/application/config.html#example-configuration
 
 AFTER :
