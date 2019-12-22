@@ -4,13 +4,12 @@ services:
     image: axelor/aio-base
     build: .
     ports:
-      - 80:80
-      - 443:443
+      - NGINX_PORT= ${PORT_AXELOR}
     environment:
-      - NGINX_HOST=127.0.0.1
-      - NGINX_PORT=443
+      - NGINX_HOST= ${DOMAIN_AXELOR}
+      - NGINX_PORT= ${PORT_AXELOR}
     volumes:
-      - ./certs:/etc/nginx/certs:ro
+#      - ./certs:/etc/nginx/certs:ro
       - ./volumes/var/lib/postgresql:/var/lib/postgresql
       - ./volumes/var/log/postgresql:/var/log/postgresql
       - ./volumes/var/lib/tomcat:/var/lib/tomcat
