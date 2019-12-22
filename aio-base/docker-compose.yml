@@ -4,7 +4,7 @@ services:
     image: axelor/aio-base
     build: .
     ports:
-      - NGINX_PORT= ${DOMAIN_AXELOR}:443
+      - NGINX_PORT= ${PORT_AXELOR}:443
     environment:
       - NGINX_HOST= ${DOMAIN_AXELOR}
       - NGINX_PORT= ${PORT_AXELOR}
