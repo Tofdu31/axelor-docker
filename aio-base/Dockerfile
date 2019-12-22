@@ -149,7 +149,7 @@ RUN set -ex \
 	&& chown -R postgres:postgres /var/lib/postgresql
 
 # nginx
-ENV NGINX_HOST localhost
+ENV NGINX_HOST 127.0.0.1
 ENV NGINX_PORT 443
 
 COPY nginx.conf /etc/nginx/conf.d.templates/
