@@ -4,24 +4,12 @@ services:
     image: axelor/aio-erp
     container_name: ${CONTAINER_AXELOR}
     ports:
-      - ${NGINX_PORT}:443
+      - ${PORT_AXELOR}:443
     environment:
-      - NGINX_HOST= ${DOMAIN_AXELOR}
-      - NGINX_PORT= ${PORT_AXELOR}
       - VIRTUAL_HOST= ${DOMAIN_AXELOR}
       - LETSENCRYPT_HOST= ${LETSENCRYPT_HOST}
-      - LETSENCRYPT_EMAIL= ${LETSENCRYPT_EMAIL}      
-    volumes:
-      - ./${AXELOR_SSL_CERTIFICATE}:/etc/nginx/certs:ro
-      - ./volumes/var/lib/postgresql:/var/lib/postgresql
-      - ./volumes/var/log/postgresql:/var/log/postgresql
-      - ./volumes/var/lib/tomcat:/var/lib/tomcat
-      - ./volumes/var/log/tomcat:/var/log/tomcat
-    expose:
-      - "8043"
-      - "443"
-      - "5432"
-      
+      - LETSENCRYPT_EMAIL= ${LETSENCRYPT_EMAIL}
+
 # Network name
 # This container app must use a network conencted to the webproxy "evertramos"
 # https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion
