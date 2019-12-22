@@ -4,7 +4,7 @@ services:
     image: axelor/aio-erp
     container_name: ${CONTAINER_AXELOR}
     ports:
-      - 8043:443
+      - ${NGINX_PORT}:443
     environment:
       - NGINX_HOST= ${DOMAIN_AXELOR}
       - NGINX_PORT= ${PORT_AXELOR}
