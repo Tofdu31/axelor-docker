@@ -7,7 +7,7 @@ services:
       - 80:80
       - 443:443
     environment:
-      - NGINX_HOST=localhost
+      - NGINX_HOST=127.0.0.1
       - NGINX_PORT=443
     volumes:
       - ./certs:/etc/nginx/certs:ro
