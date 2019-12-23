@@ -1,6 +1,6 @@
 ## VERY IMPORTANT
 
-This version of container app must use a network connected to the webproxy from projet "evertramos"
+This version of container app must use a network connected to the webproxy from projet "letsencrypt-nginx-proxy-companion"
 
 Please, See the link : https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion
 
