@@ -1,3 +1,10 @@
+## VERY IMPORTANT
+
+This version of container app must use a network connected to the webproxy from projet "evertramos"
+
+Please, See the link : https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion
+
+
 # Axelor Dockerfiles
 
 This repository provides [Dockerfiles](https://docs.docker.com/engine/reference/builder/) and samples to build [Docker](https://www.docker.com/what-docker) images for [Axelor](https://axelor.com) apps.
@@ -72,9 +79,3 @@ Or
 * `sudo docker-compose up -d`
 
 Once app completes database initialization, it can be access at: https://yourdomain.com or your subdomain https://subdomain.yourdomain.com
-
-## VERY IMPORTANT
-
-This version of container app must use a network connected to the webproxy from projet "evertramos"
-
-Please, See the link : https://github.com/evertramos/docker-compose-letsencrypt-nginx-proxy-companion
