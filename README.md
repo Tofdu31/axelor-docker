@@ -55,7 +55,15 @@ And modify with your domain or subdomain and register email Let's Encrypt
 DOMAIN_AXELOR=write_your_domain_of_AXELOR
 LETSENCRYPT_EMAIL=write_your_email_for_LETSENCRYPT
 ```
-And after :
+
+Configure the port of your AXELOR
+
+```
+PORT_AXELOR=your_port
+# Example : PORT_AXELOR=6969
+```
+
+Save the file and :
 
 * `sudo docker-compose up`
 
